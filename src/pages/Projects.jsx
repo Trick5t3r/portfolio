@@ -13,7 +13,7 @@ const projects = [
         <strong> cloud interactions via AWS</strong>.
       </span>
     ),
-    image: "/images/XposureDemo.gif",
+    image: `${process.env.PUBLIC_URL}/images/XposureDemo.gif`,
     link: "https://github.com/Trick5t3r/Xposure",
   },  
   {
@@ -27,7 +27,7 @@ const projects = [
         making optimal trading decisions under a realistic market simulation.
       </span>
     ),
-    image: "/images/rl_highfrequency.png",
+    image: `${process.env.PUBLIC_URL}/images/rl_highfrequency.png`,
     link: "https://github.com/edlaf/Deep-Learning-for-High-Frequency-trading",
   },  
   {
@@ -41,7 +41,7 @@ const projects = [
       <strong>compare multiple results</strong> across summarization methods — all within an
       <strong>English-language training framework</strong>.
     </span>),
-      image: "/images/llm.jpg",
+      image: `${process.env.PUBLIC_URL}/images/llm.jpg`,
     link: "https://github.com/Trick5t3r/Finetune-LLM-CASS",
   },
   {
@@ -54,7 +54,7 @@ const projects = [
         <strong> ICaRL method</strong> to enable the model to learn incrementally without catastrophic forgetting.
       </span>
     ),
-    image: "/images/cnn_icarl.png",
+    image: `${process.env.PUBLIC_URL}/images/cnn_icarl.png`,
     link: "https://github.com/Trick5t3r/FaceRecognitionWithContinualLearning",
   },
   {
@@ -65,7 +65,7 @@ const projects = [
         based on the paper <a href="https://arxiv.org/abs/1907.09356" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">CHoco-SGD</a>. We implemented the algorithm, built visualizations, and extended the theoretical framework. In particular, we generalized results to <strong>non-symmetric matrices</strong> (i.e., <strong>directed graphs</strong>) and explored performance on <strong>randomly sampled doubly stochastic matrices</strong> at each step.
       </span>
     ),
-    image: "/images/animation_gossip_quantifie_choco_carre.gif",
+    image: `${process.env.PUBLIC_URL}/images/animation_gossip_quantifie_choco_carre.gif`,
     link: "https://github.com/Trick5t3r/Improvement-Choco-Algo",
   } ,
   {
@@ -77,7 +77,7 @@ const projects = [
         <strong> 2D matrix factorization techniques</strong>. This work explores how quantum methods can support complex PDE resolution in physics and computational mathematics.
       </span>
     ),
-    image: "/images/vlasov_equations.png",
+    image: `${process.env.PUBLIC_URL}/images/vlasov_equations.png`,
     link: "https://github.com/Trick5t3r/psc_info_quantique_vlasov",
   },
   {
@@ -90,7 +90,7 @@ const projects = [
         <strong> Laplace–Beltrami operator</strong>.
       </span>
     ),
-    image: "/images/ANSYS_logo.png",
+    image: `${process.env.PUBLIC_URL}/images/ANSYS_logo.png`,
     link: "https://www.ansys.com/",
   },  
   {
@@ -104,7 +104,7 @@ const projects = [
         <strong> linear solvers</strong> to support formal guarantees in control environments.
       </span>
     ),
-    image: "/images/CNRS-CREATE.png",
+    image: `${process.env.PUBLIC_URL}/images/CNRS-CREATE.png`,
     link: "https://www.cnrsatcreate.cnrs.fr/",
   }    
 ];

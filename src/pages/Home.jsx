@@ -8,14 +8,14 @@ import CursorTyping from "../components/CursorTyping";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const imagesAbout = ["/images/about4.png","/images/about2.png","/images/about3.png"];
+const imagesAbout = [`${process.env.PUBLIC_URL}/images/about4.png`, `${process.env.PUBLIC_URL}/images/about2.png`, `${process.env.PUBLIC_URL}/images/about3.png`];
 const imagesProjects = [
-  "/images/XposureDemo.gif",
-  "/images/rl_highfrequency.png",
-  "/images/llm.jpg",
-  "/images/cnn_icarl.png",
-  "/images/animation_gossip_quantifie_choco_carre.gif",
-  "/images/vlasov_equations.png"
+  `${process.env.PUBLIC_URL}/images/XposureDemo.gif`,
+  `${process.env.PUBLIC_URL}/images/rl_highfrequency.png`,
+  `${process.env.PUBLIC_URL}/images/llm.jpg`,
+  `${process.env.PUBLIC_URL}/images/cnn_icarl.png`,
+  `${process.env.PUBLIC_URL}/images/animation_gossip_quantifie_choco_carre.gif`,
+  `${process.env.PUBLIC_URL}/images/vlasov_equations.png`
 ];
 
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
       {/* Hero */}
       <section className="w-full mb-12">
         <img
-          src="/images/hero.png"
+          src={`${process.env.PUBLIC_URL}/images/hero.png`}
           alt="Main Visual"
           className="w-full h-[50vh] object-cover object-center rounded-lg shadow-md"
         />

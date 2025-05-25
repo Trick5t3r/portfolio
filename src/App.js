@@ -107,7 +107,7 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/portfolio">
       <ScrollToTopOnRouteChange />
       <div className="bg-white text-black font-sans overscroll-none">
         <nav className="fixed top-0 left-0 right-0 z-50 bg-black text-white p-4 shadow-[0_4px_6px_rgba(0,0,0,0.15)]">
