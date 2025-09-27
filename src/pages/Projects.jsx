@@ -79,19 +79,6 @@ const projects = [
     ),
     image: `${process.env.PUBLIC_URL}/images/vlasov_equations.png`,
     link: "https://github.com/Trick5t3r/psc_info_quantique_vlasov",
-  },
-  {
-    title: "Internship at Ansys - Data Compression – 2024",
-    description: (
-      <span>
-        I completed a 3-month internship at <strong>Ansys</strong>, where I developed a
-        <strong> data compression algorithm</strong> using tools from
-        <strong> applied mathematics</strong>, particularly the
-        <strong> Laplace–Beltrami operator</strong>.
-      </span>
-    ),
-    image: `${process.env.PUBLIC_URL}/images/ANSYS_logo.png`,
-    link: "https://www.ansys.com/",
   },  
   {
     title: "Internship at CNRS@CREATE - Safe RL – 2025",
@@ -106,6 +93,19 @@ const projects = [
     ),
     image: `${process.env.PUBLIC_URL}/images/CNRS-CREATE.png`,
     link: "https://www.cnrsatcreate.cnrs.fr/",
+  },
+  {
+    title: "Internship at Ansys - Data Compression – 2024",
+    description: (
+      <span>
+        I completed a 3-month internship at <strong>Ansys</strong>, where I developed a
+        <strong> data compression algorithm</strong> using tools from
+        <strong> applied mathematics</strong>, particularly the
+        <strong> Laplace–Beltrami operator</strong>.
+      </span>
+    ),
+    image: `${process.env.PUBLIC_URL}/images/ANSYS_logo.png`,
+    link: "https://www.ansys.com/",
   }    
 ];
 
