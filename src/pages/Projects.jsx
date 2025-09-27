@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const projects = [
   {
@@ -110,6 +110,18 @@ const projects = [
 ];
 
 export default function Projects() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="p-6 space-y-16">
       <section className="fade-in-section">
@@ -123,6 +135,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <a
               key={index}
+              id={project.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"

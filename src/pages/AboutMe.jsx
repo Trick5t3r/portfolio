@@ -1,11 +1,14 @@
 // src/pages/AboutMe.jsx
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutMe() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     gsap.utils.toArray(".fade-in-section").forEach((section) => {
       gsap.fromTo(
@@ -41,15 +44,31 @@ export default function AboutMe() {
       {/* Education */}
       <section className="fade-in-section">
         <h2 className="text-3xl font-semibold mb-3">Education</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>
-            <span className="font-bold">Master’s in Applied Mathematics</span>, École Polytechnique (IP Paris)
+        <ul className="list-disc list-inside space-y-3 text-gray-700">
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => window.open('https://dauphine.psl.eu/formations/masters/informatique/m2-intelligence-artificielle-systemes-donnees', '_blank')}
+          >
+            <span className="font-bold">Master IASD</span>, PSL Dauphine
+            <span className="text-sm text-blue-600 font-medium ml-2">2025 - Present</span>
+          </li>
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => window.open('https://www.polytechnique.edu/', '_blank')}
+          >
+            <span className="font-bold">Master's in Applied Mathematics</span>, École Polytechnique (IP Paris)
+            <span className="text-sm text-blue-600 font-medium ml-2">2022 - Present</span>
           </li>
           <li>
             <span className="font-bold">Officer Academy</span>, Saint-Cyr Coëtquidan – Leadership & Training
+            <span className="text-sm text-blue-600 font-medium ml-2">2022</span>
           </li>
-          <li>
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => window.open('https://lycee-henri4.com/', '_blank')}
+          >
             <span className="font-bold">Preparatory Classes</span> (MPSI/MP*) – Lycée Henri-IV
+            <span className="text-sm text-blue-600 font-medium ml-2">2020 - 2022</span>
           </li>
           <li>
             <span className="font-bold">MOOCs</span> in Deep Learning & Unity3D Game Development
@@ -62,8 +81,23 @@ export default function AboutMe() {
         <h2 className="text-3xl font-semibold mb-3">Experience</h2>
         <div className="space-y-6 text-gray-700">
           <div>
+            <h3 className="font-bold">Data Analyst @ Viamedis</h3>
+            <p className="italic text-sm mb-1">France-Singapore – 2025</p>
+            <p>
+              Conducted an in-depth analysis of a software solution designed for flow mapping.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold">Research Internship @ CNRS@CREATE</h3>
+            <p className="italic text-sm mb-1">Singapor – 2025</p>
+            <p>
+              Worked on safety certification and explainability of RL agents using polytopes and linear solvers. 
+              Developed methods to analyze robustness, interpretability, and trustworthiness of learned policies.
+            </p>
+          </div>
+          <div>
             <h3 className="font-bold">R&D Intern @ Ansys</h3>
-            <p className="italic text-sm mb-1">Lyon, Franc – 2024</p>
+            <p className="italic text-sm mb-1">Lyon, France – 2024</p>
             <p>
               Designed and implemented a compression algorithm using
               Laplace-Beltrami operators on complex geometries.
@@ -85,6 +119,13 @@ export default function AboutMe() {
               data pipelines.
             </p>
           </div>
+          <div>
+            <h3 className="font-bold">Internship @ Iconem</h3>
+            <p className="italic text-sm mb-1">Paris, France – 2018</p>
+            <p>
+              Explored an architectural toolset (Mont-Saint-Michel project).
+            </p>
+          </div>
         </div>
       </section>
 
@@ -92,16 +133,42 @@ export default function AboutMe() {
       <section className="fade-in-section">
         <h2 className="text-3xl font-semibold mb-3">Projects</h2>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>
-            <span className="font-bold">H-GenAI Web App:</span> PDF media review,
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => navigate('/projects#xposure')}
+          >
+            <span className="font-bold">H-GenAI Web App: </span> PDF media review,
             sentiment analysis & AI-generated summary pipeline.
           </li>
-          <li>
-            <span className="font-bold">AI Hackathon Runner-Up:</span> Outfit
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => navigate('/projects#reinforcement-learning-for-high-frequency-trading')}
+          >
+            <span className="font-bold">Reinforcement Learning for High Frequency Trading: </span> 
+            Explored the application of RL for HFT in a simulated market environment. 
+            Designed and trained RL agents using Deep Q-Learning (DQL), Actor-Critic (AC), 
+            and Proximal Policy Optimization (PPO) algorithms.
+          </li>
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => navigate('/projects#finetune-llm-for-legal-summarization')}
+          >
+            <span className="font-bold">Finetune LLM for Legal Summarization: </span> 
+            Fine-tuned a Small Language Model (SLM) on legal summarization tasks using a non-English dataset. 
+            Worked on rulings from the French Court of Cassation, combining synthetic summaries from a large LLM with expert-written summaries.
+          </li>
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => navigate('/projects#face-recognition-with-continual-learning')}
+          >
+            <span className="font-bold">AI Hackathon Runner-Up: </span> Outfit
             makeover generator based on machine-learning image analysis.
           </li>
-          <li>
-            <span className="font-bold">Air-Gap Data Exfiltration PoC:</span> 
+          <li 
+            className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            onClick={() => navigate('/projects#improvement-of-the-choco-algorithm')}
+          >
+            <span className="font-bold">Air-Gap Data Exfiltration PoC: </span> 
             Proof-of-concept via controlled screen luminosity variations.
           </li>
         </ul>
@@ -114,8 +181,9 @@ export default function AboutMe() {
           <div>
             <h4 className="font-semibold mb-1">Technical</h4>
             <ul className="list-disc list-inside space-y-1">
-              <li>Applied Math &amp; Algorithms, Basic Cybersecurity</li>
-              <li>Python, C++/C#, Java, React</li>
+              <li>AI, Applied Math &amp; Algorithms, Basic Cybersecurity</li>
+              <li>Python, Pytorch, Tensorflow</li>
+              <li>Python, React, C++/C#, Java</li>
               <li>SQL, Git, Docker</li>
             </ul>
           </div>
@@ -125,6 +193,7 @@ export default function AboutMe() {
               <li>French (native), English (fluent), Spanish (intermediate)</li>
               <li>Trekking, Volleyball, Handball, Climbing</li>
               <li>Musical Set Design &amp; Event Organization</li>
+              <li>Repair arcade terminals, Website creation</li>
             </ul>
           </div>
         </div>

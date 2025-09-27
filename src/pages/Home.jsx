@@ -70,12 +70,12 @@ export default function Home() {
             <div className={cardClasses}>
               <h2 className="text-3xl font-bold mb-4">About Me</h2>
               <p className="text-gray-700 mb-4">
-                  Mathematics is my passion — implementing algorithms is my playground.
+                  Mathematics is my passion — implementing algorithms is my playground
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-                <li><strong>Applied Math &amp; Algorithms</strong> – Master's, École Polytechnique</li>
-                <li><strong>Languages &amp; Frameworks</strong> – Python, C++/C#, Java, React</li>
-                <li><strong>Data &amp; DevOps</strong> – SQL, Git, Docker</li>
+                <li><strong>Applied Math &amp; Algorithms</strong> – Master's, École Polytechnique &amp; IASD Dauphine</li>
+                <li><strong>Languages &amp; Frameworks</strong> – Python, Pytorch, React</li>
+                <li><strong>Data &amp; DevOps</strong> – Git, Docker, SQL</li>
               </ul>
               <div className="flex justify-center">
                 <div className="w-full max-w-md">
