@@ -67,7 +67,36 @@ const projects = [
     ),
     image: `${process.env.PUBLIC_URL}/images/animation_gossip_quantifie_choco_carre.gif`,
     link: "https://github.com/Trick5t3r/Improvement-Choco-Algo",
-  } ,
+  },
+  {
+    title: "Exfiltration via Screen Luminosity",
+    description: (
+      <span>
+        Data exfiltration project through screen brightness, inspired by invisible optical channels 
+        (modulating brightness to transmit bits).  
+        The approach hides information in subtle brightness variations imperceptible to the human eye, 
+        but detectable by a camera.  
+        A <strong>YOLO</strong> model was used to identify and track screens, enabling the capture and 
+        decoding of hidden signals. The repository explores this technique and its limitations in a 
+        security and privacy context.
+      </span>
+    ),
+    image: `${process.env.PUBLIC_URL}/images/exfiltration_data.gif`,
+    link: "https://github.com/Trick5t3r/Exfiltration-via-Screen-Luminosity",
+  },  
+  {
+    title: "Tent for Audio Adversarial Defense",
+    description: (
+      <span>
+        Implementation of <strong>TENT (Test-Time Entropy Minimization)</strong> 
+        against <strong>BIM adversarial attacks</strong> on speech recognition models. 
+        The project leverages the <strong>DENT framework</strong>, processes WAV audio files
+        converted into <strong>spectrograms</strong>, and uses a <strong>custom CNN</strong>.
+      </span>
+    ),
+    image: `${process.env.PUBLIC_URL}/images/dent_image.png`,
+    link: "https://github.com/Trick5t3r/tent_for_audio_defense",
+  },   
   {
     title: "Solving Vlasov Equations using Quantum Computing",
     description: (
