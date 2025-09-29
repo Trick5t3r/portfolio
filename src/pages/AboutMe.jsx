@@ -89,7 +89,7 @@ export default function AboutMe() {
           </div>
           <div>
             <h3 className="font-bold">Research Internship @ CNRS@CREATE</h3>
-            <p className="italic text-sm mb-1">Singapor – 2025</p>
+            <p className="italic text-sm mb-1">Singapore – 2025</p>
             <p>
               Worked on safety certification and explainability of RL agents using polytopes and linear solvers. 
               Developed methods to analyze robustness, interpretability, and trustworthiness of learned policies.
@@ -182,9 +182,9 @@ export default function AboutMe() {
             <h4 className="font-semibold mb-1">Technical</h4>
             <ul className="list-disc list-inside space-y-1">
               <li>AI, Applied Math &amp; Algorithms, Basic Cybersecurity</li>
-              <li>Python, Pytorch, Tensorflow</li>
-              <li>Python, React, C++/C#, Java</li>
-              <li>SQL, Git, Docker</li>
+              <li>Python, Pytorch</li>
+              <li>React, C++/C#, Java</li>
+              <li>Git, Docker, SQL</li>
             </ul>
           </div>
           <div>

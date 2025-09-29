@@ -1,5 +1,62 @@
 import React, { useEffect } from "react";
 
+// Composant pour l'icône document
+const DocumentIcon = ({ link }) => {
+  if (!link) return null;
+  
+  const handleClick = (e) => {
+    e.stopPropagation(); // Empêche la propagation du clic vers le lien principal
+    e.preventDefault();
+    
+    // Vérifier si c'est un PDF
+    const isPdf = link.toLowerCase().endsWith('.pdf');
+    
+    if (isPdf) {
+      // Pour les PDF, forcer le téléchargement
+      const linkElement = document.createElement('a');
+      linkElement.href = link;
+      linkElement.download = link.split('/').pop(); // Nom du fichier
+      document.body.appendChild(linkElement);
+      linkElement.click();
+      document.body.removeChild(linkElement);
+    } else {
+      // Pour les autres types de documents, ouvrir dans un nouvel onglet
+      const newWindow = window.open(link, '_blank', 'noopener,noreferrer');
+      if (!newWindow) {
+        // Si popup bloqué, créer un lien temporaire avec target="_blank"
+        const linkElement = document.createElement('a');
+        linkElement.href = link;
+        linkElement.target = '_blank';
+        linkElement.rel = 'noopener noreferrer';
+        document.body.appendChild(linkElement);
+        linkElement.click();
+        document.body.removeChild(linkElement);
+      }
+    }
+  };
+  
+  return (
+    <button
+      onClick={handleClick}
+      className="inline-block ml-2 text-gray-600 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+      title="Ouvrir le document"
+    >
+      <svg
+        className="w-5 h-5"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </button>
+  );
+};
+
 const projects = [
   {
     title: "Xposure",
@@ -15,6 +72,7 @@ const projects = [
     ),
     image: `${process.env.PUBLIC_URL}/images/XposureDemo.gif`,
     link: "https://github.com/Trick5t3r/Xposure",
+    documentLink: `${process.env.PUBLIC_URL}/images/XposureDemo.gif`,
   },  
   {
     title: "Reinforcement Learning for High Frequency Trading",
@@ -29,6 +87,7 @@ const projects = [
     ),
     image: `${process.env.PUBLIC_URL}/images/rl_highfrequency.png`,
     link: "https://github.com/edlaf/Deep-Learning-for-High-Frequency-trading",
+    documentLink: `${process.env.PUBLIC_URL}/documents/RL_report.pdf`,
   },  
   {
     title: "Finetune LLM for Legal Summarization",
@@ -43,6 +102,7 @@ const projects = [
     </span>),
       image: `${process.env.PUBLIC_URL}/images/llm.jpg`,
     link: "https://github.com/Trick5t3r/Finetune-LLM-CASS",
+    documentLink: `${process.env.PUBLIC_URL}/documents/LLM_report.pdf`,
   },
   {
     title: "Face Recognition With Continual Learning",
@@ -67,6 +127,7 @@ const projects = [
     ),
     image: `${process.env.PUBLIC_URL}/images/animation_gossip_quantifie_choco_carre.gif`,
     link: "https://github.com/Trick5t3r/Improvement-Choco-Algo",
+    documentLink: `${process.env.PUBLIC_URL}/documents/EA_choco.pdf`,
   },
   {
     title: "Exfiltration via Screen Luminosity",
@@ -122,6 +183,7 @@ const projects = [
     ),
     image: `${process.env.PUBLIC_URL}/images/CNRS-CREATE.png`,
     link: "https://www.cnrsatcreate.cnrs.fr/",
+    documentLink: `${process.env.PUBLIC_URL}/documents/polytopes_for_safe_rl.pdf`,
   },
   {
     title: "Internship at Ansys - Data Compression – 2024",
@@ -175,7 +237,10 @@ export default function Projects() {
                 alt={project.title}
                 className="w-full h-48 object-cover mb-4 rounded"
               />
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 flex items-center">
+                {project.title}
+                <DocumentIcon link={project.documentLink} />
+              </h3>
               <p className="text-gray-600">{project.description}</p>
             </a>
           ))}
